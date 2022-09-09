@@ -1,0 +1,234 @@
+html,body{
+    background-image:url(d5ywlyk-ef989c70-6ac4-46c0-abe7-022aba0b681e.png);
+    background-size: 100% 100%;
+    font-family: 'Minecraftia', sans-serif;
+                                                  
+}
+
+/*nav bar*/
+.dropdown {
+    margin: 0;
+    padding: 0;
+}
+.bar {
+    display: none;
+}
+nav{
+    justify-content: right;
+    background: #555555;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    border-top: 50px;
+
+    
+
+}
+.logo{
+    padding: 5px 0 0 50px;
+    width: 320px;
+    height: 51px;
+
+}
+nav ul{
+    padding: 0;
+    margin: 0;
+    float: right;
+    margin-right: 25px;
+
+}
+nav ul li{
+    background: #555555;
+    position: relative;
+    list-style: none;
+    display: inline-block;
+
+}
+nav ul li a{
+    display: block;
+    padding: 0 15px;
+    color: white;
+    text-decoration: none;
+    line-height: 60px;
+    font-size: 20px;
+}
+nav ul li a:hover{
+    background:#3a3939;
+}
+nav ul ul{
+    position: absolute;
+    top: 60px;
+    display: none;
+}
+nav ul li:hover > ul{
+    display: block;
+}
+nav ul ul li{
+    width: 150px;
+    float: none;
+    display: list-item;
+    position: relative;
+}
+nav ul ul ul li{
+    position: relative;
+}
+/*Inhalt*/
+.inhalt{
+    background-color: #555555;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    min-height: 100%;
+    margin-bottom: 174px;
+    box-shadow: 5px 5px black;
+    flex-direction: column;
+    margin-top: 25px;   
+    margin-bottom: 25px
+    
+
+}
+.title{
+    font-size: 30px;
+    padding-left: 20px;
+    border: 0;
+    width: 98,1%;
+    height: 50px;
+    box-shadow: 3px 3px black;
+    background-color: rgb(56, 51, 51);
+    color: white;
+}
+.datum{
+    padding-top: 10px;
+    padding-left: 20px;
+}
+.name{
+    padding-top: 10px; 
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+.text{
+    padding-top: 70px;
+    
+}
+.newstext{
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bild{
+    height: 200px   ;
+    border: 10px double rgb(44, 37, 37);
+    float: center;
+    
+    
+}
+.button{
+    background-color: #3b3a3a;
+    padding-left: 10px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 5px 5px black;
+}
+.button a{
+    color: white;
+}
+.img0{
+    height: 488px;
+}
+/*formular*/
+.formular{
+    margin: 10% 15%; 
+    padding: 2%;
+    display: flex;
+    background-image:url(stonee.jpg);
+
+}
+.formular input::placeholder
+{
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+    font-weight: 100;
+}
+.formular textarea::placeholder
+{
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+
+.form{
+    margin-bottom: 15px;
+    margin-left: 40%;
+    background: transparent;
+    border-color: black; 
+
+}
+.form::placeholder
+{
+    color: black;
+}
+/* Footer inspirierd von Learning Tutorial Point*/
+footer{
+    width: 100%;
+    background-color: #555555;
+    padding: 15px 0px;
+    margin-top: auto;
+}
+
+.footer-unten{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    background: #555555;
+    text-align: center;
+}
+footer, .inhalt::after {
+    height: 174px;
+}
+/*Responsiv code*/
+@media (max-width: 545px){
+    .nav ul li{
+        font-size: 15px;
+        
+    }
+    nav{
+        justify-content: right;
+        background: #555555;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        border-top: 100px;
+    
+    }
+}
+
+
+
+
+@media (max-width: 945px){
+    .dropdown{
+        margin-bottom: 120px;
+    }
+    .inhalt{
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 40px;
+        
+    }
+
+    .text {
+        padding-top: 100px;
+        font-size: 30px;
+          
+
+    }
+    .img0{
+        width: 100%; }
+    nav{
+        justify-content: right;
+        background: #555555;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        border-top: 100px;
+        
+    }        
+    
+}   

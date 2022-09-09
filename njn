@@ -1,0 +1,39 @@
+           // Testen, ob das Formular geschickt wurde
+	$file= $_FILES['file'];                // superglobaler ARRAY $_FILES
+	//print_r($file); 
+	// ---alle wichtigen Variablen aus dem superglobalen Array herauslesen ---------------
+	$fileName= $_FILES['file']['name'];    // davon 'Name’
+	$fileTmpName= $_FILES['file']['tmp_name'];
+	$filegrosse= $_FILES ['file']['size']; // davon 'temporärer Name', damit getestet werden kann$fileGroesse= $_FILES['file']['size']; // davon 'Datei-Grösse’
+	$fileFehler= $_FILES['file']['error']; // davon 'Fehler’
+	$fileTyp= $_FILES['file']['type'];     // davon 'Typ’
+	//-------Vorbereitung der Datei-Endung
+	$fileArt= explode('.',$fileName); // Art des Dateinamens nach dem Komma in Array extrahieren$fileActualExt= strtolower(end($fileArt)); // im letzten Array-Teil wird alles kleingeschrieben
+	$fileActualExt= strtolower(end($fileArt));
+
+    //----------------Prüfen auf verschiedene Kriterien: ----------------------------------    
+    if($fileActualExt==="jpg") {            // der File-Typ ist erlaubt
+      if($fileFehler=== 0) {                           // Keine Fehlermeldung von PHP
+        if($fileGroesse< 500000) {                   // nur bis 1'000'000 Bytes Grösse
+
+	      //----------------jetzt ist alles geprüft, es wird der UPLOAD vorbereitet: ------
+	      $fileZiel= 'text/'.$fileNameNeu.'.'.$fileActualExt;          // hierher soll verschoben werden
+
+	      //----------------jetzt wird die Datei hochgeladen, wenn alle Kriterien erfüllt:
+	      move_uploaded_file($fileTmpName, $fileZiel); // jetzt wird die angegebene Datei verschoben
+	      header("Location: index.php"); // zurück in die Startposition
+	      //-------------------------------------------------------------------------------
+	    } else {
+	      echo "Datei ist zu gross";
+	    }
+      } else { 
+		echo "Es gab ein Fehl beim Hochladen der Datei";
+		print $fileFehler;
+      }
+    } else {
+      echo "Diese Art von Datei kann nicht hochgeladen werden";
+  } 
+   // Testen, ob das Formular geschickt wurde
+
+           <input type="hidden" name="MAX_FILE_SIZE" value="500 mb" />
+        <input type="file" name="file" />
